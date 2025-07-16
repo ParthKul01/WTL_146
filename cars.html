@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #0a0a23;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffcc00;
+}
+
+.container{
+    margin-top: 30px;
+}
+
+
+.fade-in {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeInScale 2s ease forwards;
+  color:rgb(81, 81, 81);
+  font-size: 40px;
+  text-align : center ;
+}
+
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.cars{
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  gap: 30px; 
+  flex-wrap: wrap; 
+  padding: 20px;
+
+}
+
+ .car-details {
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.Audi {
+  width: 300px;
+  height: auto;
+  background-color: #2f2f2f;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  
+}
+
+.Audi:hover {
+  transform: scale(1.05);
+}
+
+.price {
+  font-size: 20px;
+  color: #ffcc00;
+  margin: 5px 0;
+  
+}
+
+.rating {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+    <div class="logo">CarShowroom</div>
+    <ul class="nav-links">
+      <li><a href="CarShowRoom.html">Home</a></li>
+      <li><a href="cars.html">Cars</a></li>
+      <li><a href="pricing.html">Car Pricing</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+   <div class="container">
+
+
+    <div class="heading">
+        
+      <h1 class="fade-in"> Here are our <strong style="font-weight: bold; color: black;">Top</strong> Showroom Cars </h1>
+    
+    </div>
+
+    <div class="cars">
+
+        <div class="Audi">
+
+          <div class="carimage">
+             <img src="audiR8.jpg" width="300px" height="300px" style="border-radius: 25px;">
+          </div>
+
+          <div class="car-details">
+            <h2>Audi R8</h2>
+            <p class="price">₹ 2.30 Crore</p>
+             <p class="rating">★★★★☆ (4.5/5)</p>
+          </div>
+        </div>
+
+        <div class="Audi">
+
+          <div class="carimage">
+             <img src="BMWM8.jpg" width="300px" height="300px" style="border-radius: 25px;">
+          </div>
+
+          <div class="car-details">
+            <h2>BMW M8</h2>
+            <p class="price">₹ 2.15 Crore</p>
+             <p class="rating">★★★★★ (5/5)</p>
+          </div>
+        </div>
+
+         <div class="Audi">
+
+          <div class="carimage">
+             <img src="Porche.jpg" width="300px" height="300px" style="border-radius: 25px;">
+          </div>
+
+          <div class="car-details">
+            <h2>Porche 911</h2>
+            <p class="price">₹ 1.15 Crore</p>
+             <p class="rating">★★★★★ (5/5)</p>
+          </div>
+        </div>
+
+        <div class="Audi">
+
+          <div class="carimage">
+             <img src="Gwagon.jpg" width="300px" height="300px" style="border-radius: 25px;">
+          </div>
+
+          <div class="car-details">
+            <h2>Mercedes-Benz G-Class</h2>
+            <p class="price">₹ 3.45 Crore</p>
+             <p class="rating">★★★★★ (4.9/5)</p>
+          </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+   </div>
+    
+</body>
+</html>
