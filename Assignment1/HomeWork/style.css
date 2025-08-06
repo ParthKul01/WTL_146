@@ -1,0 +1,331 @@
+/* General body styles (Tasks 1, 2, 18, 19, 59) */
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  background-image: url('2.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Task 3, 7, 15, 17: Uppercase, center, spacing, shadow */
+#mainHeading {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 4px gray;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Task 4, 5, 6: Link styling */
+a {
+  color: blue;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Task 8: Underlined text */
+.underlineText {
+  text-decoration: underline;
+}
+
+/* Task 9, 10, 23–25: Box with ID, padding, border, margin */
+#boxPara {
+  background-color: #fff0f0;
+  padding: 15px;
+  border: 1px solid #999;
+  margin: 10px 0;
+}
+
+/* Task 11: Colored paragraph text */
+.coloredText {
+  color: darkblue;
+}
+
+/* Task 12 */
+.boldText {
+  font-weight: bold;
+}
+
+/* Task 13 */
+.italicText {
+  font-style: italic;
+}
+
+/* Task 14 */
+.capitalized {
+  text-transform: capitalize;
+}
+
+/* Task 16: Small caps */
+.smallCaps {
+  font-variant: small-caps;
+}
+
+/* Task 20–22: Responsive circular image with shadow */
+#myImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
+}
+
+/* Tasks 26–28: Multiple borders */
+.borderSolid {
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px 0;
+}
+.borderDotted {
+  border: 2px dotted green;
+  padding: 10px;
+  margin: 10px 0;
+}
+.borderDouble {
+  border: 4px double red;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* Task 29: Card styling */
+#cardBox {
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+  background: white;
+}
+
+/* Tasks 30, 31: Positioning badge */
+#relativeBox {
+  position: relative;
+  background: #fff;
+  padding: 15px;
+}
+#badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 50%;
+}
+
+/* Tasks 32–34: Z-index layering */
+.layerBox {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  opacity: 0.8;
+}
+#layer1 {
+  background: lightblue;
+  z-index: 1;
+  top: 50px;
+  left: 50px;
+}
+#layer2 {
+  background: lightgreen;
+  z-index: 2;
+  top: 70px;
+  left: 70px;
+}
+
+/* Tasks 35, 36: Button hover and focus */
+#myButton {
+  background: #008cba;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+#myButton:hover {
+  background: #005f5f;
+}
+#myButton:focus {
+  border: 2px solid black;
+}
+
+/* Tasks 37–39: List horizontal layout */
+#myList {
+  list-style: none;
+  padding: 0;
+}
+#myList li {
+  display: inline;
+  margin-right: 15px;
+}
+
+/* Tasks 40–41: Nested list styling */
+ol li {
+  color: #333;
+  font-weight: bold;
+}
+ul ul {
+  list-style-type: circle;
+  color: darkgreen;
+}
+
+/* Tasks 42–44: Flex layout */
+#flexContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+.flexItem {
+  background: #eee;
+  padding: 15px;
+  margin: 5px;
+  flex: 1;
+  text-align: center;
+}
+
+/* Tasks 45–51: Extra Flex alignments */
+.flexStart {
+  justify-content: flex-start;
+}
+.flexEnd {
+  justify-content: flex-end;
+}
+.flexCenter {
+  justify-content: center;
+}
+
+/* Tasks 52–56: Grid layout */
+#gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+.gridItem {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.gridSpanCol {
+  grid-column: span 2;
+}
+.gridSpanRow {
+  grid-row: span 2;
+}
+
+/* Task 57: Gradient background */
+#gradientBox {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  padding: 15px;
+  color: white;
+  margin: 10px 0;
+}
+
+/* Task 58: Transparent background */
+.transparentBox {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Tasks 60, 61: Simple animation */
+#animatedBox {
+  width: 100px;
+  height: 100px;
+  background: green;
+  animation: slideRight 4s infinite;
+}
+@keyframes slideRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100px); }
+}
+
+/* Tasks 62–64: Transition effect */
+.transitionBox {
+  background: lightcoral;
+  padding: 10px;
+  transition: background 0.5s ease;
+}
+.transitionBox:hover {
+  background: tomato;
+}
+
+/* Tasks 65–67: Input styling */
+#inputText {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  width: 200px;
+}
+#inputText:focus {
+  border-color: blue;
+}
+#submitBtn {
+  background: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+}
+#submitBtn:hover {
+  background: #218838;
+}
+#submitBtn:active {
+  background: #1e7e34;
+}
+
+/* Tasks 68–70: Responsive design */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  #flexContainer {
+    flex-direction: column;
+  }
+  #myList li {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+/* Task 71: Show/hide on hover */
+#hoverBox {
+  background: #ccc;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+}
+#hiddenText {
+  display: none;
+}
+#hoverBox:hover #hiddenText {
+  display: block;
+}
+
+/* Tasks 72–73: Hero section */
+#myhero {
+  background: url('1.jpg') center/cover no-repeat;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tasks 74–76: Footer layout */
+#footerBox {
+  display: flex;
+  justify-content: space-around;
+  background: #333;
+  color: white;
+  padding: 20px;
+  margin-top: 30px;
+}
+.footerCol {
+  flex: 1;
+  text-align: center;
+}
