@@ -1,1 +1,200 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All JavaScript DOM Tasks</title>
+  <style>
+    .hidden { display: none; }
+    .red-border { border: 2px solid red; }
+    .dark-mode { background-color: #333; color: white; }
+    .accordion-content { display: none; }
+    .done { text-decoration: line-through; }
+    .dropdown-content { display: none; position: absolute; background: #eee; padding: 10px; }
+    .dropdown:hover .dropdown-content { display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Paragraph -->
+  <p id="myPara">Original text.</p>
+  <button onclick="document.getElementById('myPara').innerText='Text changed!'">Change Text</button>
+
+  <!-- 2. Image change -->
+  <img id="myImage" src="https://via.placeholder.com/100" alt="Image">
+  <button onclick="document.getElementById('myImage').src='https://via.placeholder.com/150'">Change Image</button>
+
+  <!-- 3. Background color change -->
+  <div id="colorBox" style="width:100px;height:100px;background:lightblue;"></div>
+  <button onclick="document.getElementById('colorBox').style.backgroundColor='lightgreen'">Change Color</button>
+
+  <!-- 4. Toggle visibility -->
+  <div id="toggleBox">Toggle me!</div>
+  <button onclick="toggleVisibility()">Show/Hide</button>
+
+  <!-- 5. Add list item -->
+  <ul id="myList">
+    <li>Item 1</li>
+  </ul>
+  <button onclick="addListItem()">Add Item</button>
+
+  <!-- 6. Delete element -->
+  <div id="deleteMe">Delete this element</div>
+  <button onclick="document.getElementById('deleteMe').remove()">Delete Element</button>
+
+  <!-- 7. Add CSS class -->
+  <p id="stylePara">Style me</p>
+  <button onclick="document.getElementById('stylePara').classList.add('red-border')">Add Red Border</button>
+
+  <!-- 8. Show input value -->
+  <input type="text" id="nameInput" placeholder="Type name">
+  <button onclick="document.getElementById('displayName').innerText = document.getElementById('nameInput').value">Show Name</button>
+  <div id="displayName"></div>
+
+  <!-- 9. Font size control -->
+  <p id="textSize">Adjust my size</p>
+  <button onclick="adjustFontSize(1)">Increase</button>
+  <button onclick="adjustFontSize(-1)">Decrease</button>
+
+  <!-- 10. Live char count -->
+  <textarea id="textArea" oninput="updateCharCount()"></textarea>
+  <div>Characters: <span id="charCount">0</span></div>
+
+  <!-- 11. To-do list -->
+  <input id="todoInput" placeholder="New task">
+  <button onclick="addTodo()">Add</button>
+  <ul id="todoList"></ul>
+
+  <!-- 12. Accordion -->
+  <div onclick="toggleAccordion()">Click to toggle content</div>
+  <div id="accordionContent" class="accordion-content">This is hidden content</div>
+
+  <!-- 13. Image gallery -->
+  <img id="galleryImg" src="https://via.placeholder.com/100" style="display:block;margin-top:10px;">
+  <button onclick="changeImage(-1)">Previous</button>
+  <button onclick="changeImage(1)">Next</button>
+
+  <!-- 14. Dynamic Table -->
+  <table border="1" id="myTable">
+    <tr><th>Name</th><th>Action</th></tr>
+  </table>
+  <input id="tableInput" placeholder="Row name">
+  <button onclick="addRow()">Add Row</button>
+
+  <!-- 15. Dark mode toggle -->
+  <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+
+  <!-- 16. Filter list -->
+  <input oninput="filterItems()" id="searchInput" placeholder="Search...">
+  <ul id="searchList">
+    <li>Apple</li><li>Banana</li><li>Cherry</li><li>Date</li>
+  </ul>
+
+  <!-- 17. Dropdown Menu -->
+  <div class="dropdown">Hover me
+    <div class="dropdown-content">
+      <p>Submenu 1</p>
+      <p>Submenu 2</p>
+    </div>
+  </div>
+
+  <!-- 18. Form Validation -->
+  <form onsubmit="return validateForm()">
+    <input id="reqInput" placeholder="Required field">
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- 19. Image Slideshow -->
+  <img id="slideImg" src="https://via.placeholder.com/100">
+  <button onclick="slide(-1)">Prev</button>
+  <button onclick="slide(1)">Next</button>
+
+  <!-- 20. Event Delegation -->
+  <ul id="delegationList">
+    <li>Click me 1</li>
+    <li>Click me 2</li>
+  </ul>
+
+  <script>
+    function toggleVisibility() {
+      const box = document.getElementById('toggleBox');
+      box.classList.toggle('hidden');
+    }
+
+    function addListItem() {
+      const li = document.createElement('li');
+      li.textContent = 'New Item';
+      document.getElementById('myList').appendChild(li);
+    }
+
+    function adjustFontSize(change) {
+      const el = document.getElementById('textSize');
+      const current = parseInt(window.getComputedStyle(el).fontSize);
+      el.style.fontSize = (current + change) + 'px';
+    }
+
+    function updateCharCount() {
+      document.getElementById('charCount').innerText = document.getElementById('textArea').value.length;
+    }
+
+    function addTodo() {
+      const val = document.getElementById('todoInput').value;
+      const li = document.createElement('li');
+      li.textContent = val;
+      li.onclick = () => li.classList.toggle('done');
+      const btn = document.createElement('button');
+      btn.textContent = 'Delete';
+      btn.onclick = () => li.remove();
+      li.appendChild(btn);
+      document.getElementById('todoList').appendChild(li);
+    }
+
+    function toggleAccordion() {
+      document.getElementById('accordionContent').classList.toggle('hidden');
+    }
+
+    let gallery = ["https://via.placeholder.com/100", "https://via.placeholder.com/150", "https://via.placeholder.com/200"];
+    let currentImg = 0;
+    function changeImage(dir) {
+      currentImg = (currentImg + dir + gallery.length) % gallery.length;
+      document.getElementById('galleryImg').src = gallery[currentImg];
+    }
+
+    function addRow() {
+      const val = document.getElementById('tableInput').value;
+      const row = document.createElement('tr');
+      row.innerHTML = `<td>${val}</td><td><button onclick="this.parentElement.parentElement.remove()">Delete</button></td>`;
+      document.getElementById('myTable').appendChild(row);
+    }
+
+    function filterItems() {
+      const filter = document.getElementById('searchInput').value.toLowerCase();
+      const items = document.querySelectorAll('#searchList li');
+      items.forEach(item => item.style.display = item.textContent.toLowerCase().includes(filter) ? '' : 'none');
+    }
+
+    function validateForm() {
+      const input = document.getElementById('reqInput');
+      if (!input.value.trim()) {
+        input.classList.add('red-border');
+        return false;
+      }
+      input.classList.remove('red-border');
+      return true;
+    }
+
+    let slideIndex = 0;
+    const slides = ["https://via.placeholder.com/100", "https://via.placeholder.com/150", "https://via.placeholder.com/200"];
+    function slide(dir) {
+      slideIndex = (slideIndex + dir + slides.length) % slides.length;
+      document.getElementById('slideImg').src = slides[slideIndex];
+    }
+
+    document.getElementById('delegationList').addEventListener('click', e => {
+      if (e.target.tagName === 'LI') alert(e.target.textContent);
+    });
+  </script>
+
+</body>
+</html>
