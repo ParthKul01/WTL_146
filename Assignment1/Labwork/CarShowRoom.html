@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Showroom</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: scale(0.8);
+      animation: fadeInScale 2s ease forwards;
+      color: rgb(81, 81, 81);
+      font-size: 40px;
+      text-align: center;
+    }
+
+    @keyframes fadeInScale {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .about-section {
+      padding: 40px 20px;
+      background-color: #f8f8f8;
+      text-align: center;
+    }
+
+    .about-section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .about-section p {
+      font-size: 18px;
+      color: #444;
+      max-width: 800px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bootstrap Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">CarShowroom</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="CarShowRoom.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cars.html">Cars</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pricing.html">Car Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h1 class="fade-in">Hey, Welcome to our Car Showroom</h1>
+
+    <section class="about-section">
+      <h2>About Us</h2>
+      <p>
+        Welcome to <strong>Elite Wheels Car Showroom</strong>, your one-stop destination for luxury and performance vehicles.
+        With a passion for excellence and a commitment to delivering the finest automotive experience, we proudly showcase
+        an exclusive collection of world-renowned brands including <strong>BMW</strong>, <strong>Mercedes-Benz</strong>,
+        <strong>Audi</strong>, and <strong>Porsche</strong>.
+      </p>
+      <p>
+        At Elite Wheels, we believe that a car is more than just a vehicle — it’s a lifestyle. Whether you're looking for elegance,
+        power, innovation, or all of the above, our showroom offers something for every enthusiast. Our experienced team is
+        dedicated to helping you find the perfect car that matches your style and aspirations.
+      </p>
+      <p>
+        Visit us today and drive away in the car of your dreams. Experience luxury, performance, and trust — all under one roof.
+      </p>
+    </section>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+  <div class="container">
+    <p class="mb-0">&copy; 2025 Elite Wheels Car Showroom. All rights reserved.</p>
+  </div>
+</footer>
+
+
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
